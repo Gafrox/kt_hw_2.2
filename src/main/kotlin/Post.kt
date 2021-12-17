@@ -8,12 +8,16 @@ data class Post(
     val reply_owner_id: Long,
     val reply_post_id: Long,
     val friends_only: Boolean,
-    val comments: String,
-    val likes: Long,
-    val reposts: Long,
-    val views: Long,
+    val comments: Comments?,
+    val copyright: Copyright?,
+    val likes: Likes?,
+    val reposts: Repost?,
+    val views: Views?,
     val post_type: String,
+    val post_source: String,
+    val geo: String,
     val signer_id: Long,
+    val copy_history: String,
     val can_pin: Boolean,
     val can_delete: Boolean,
     val can_edit: Boolean,
@@ -21,5 +25,6 @@ data class Post(
     val marked_as_ads: Boolean,
     val is_favorite: Boolean,
     val donut: Boolean,
-    val postponed_id: Long
+    val postponed_id: Long,
+    val attachments: Array<Attachment>
 )
