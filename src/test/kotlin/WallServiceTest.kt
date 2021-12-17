@@ -4,6 +4,8 @@ import org.junit.Assert.*
 
 class WallServiceTest {
 
+    val arrayAttachment = emptyArray<Attachment>()
+
     @Test
     fun add() {
         val result = WallService.add(
@@ -34,7 +36,8 @@ class WallServiceTest {
                 false,
                 false,
                 false,
-                0
+                0,
+                arrayAttachment
             )
         )
         assertTrue(result.id != 0L)
@@ -72,7 +75,8 @@ class WallServiceTest {
                 false,
                 false,
                 false,
-                0
+                0,
+                arrayAttachment
             )
         )
         service.add(
@@ -103,7 +107,8 @@ class WallServiceTest {
                 false,
                 false,
                 false,
-                0
+                0,
+                arrayAttachment
             )
         )
         service.add(
@@ -134,7 +139,8 @@ class WallServiceTest {
                 false,
                 false,
                 false,
-                0
+                0,
+                arrayAttachment
             )
         )
 
@@ -165,7 +171,8 @@ class WallServiceTest {
             false,
             false,
             false,
-            0
+            0,
+            arrayAttachment
         )
 
         val result = service.update(update)
@@ -207,7 +214,8 @@ class WallServiceTest {
                 false,
                 false,
                 false,
-                0
+                0,
+                arrayAttachment
             )
         )
         service.add(
@@ -238,7 +246,8 @@ class WallServiceTest {
                 false,
                 false,
                 false,
-                0
+                0,
+                arrayAttachment
             )
         )
         service.add(
@@ -269,7 +278,8 @@ class WallServiceTest {
                 false,
                 false,
                 false,
-                0
+                0,
+                arrayAttachment
             )
         )
 
@@ -300,7 +310,8 @@ class WallServiceTest {
             false,
             false,
             false,
-            0
+            0,
+            arrayAttachment
         )
 
         val result = service.update(update)
