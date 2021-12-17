@@ -1,2 +1,2 @@
-class Views {
+class Views(count: Long) {
 }
