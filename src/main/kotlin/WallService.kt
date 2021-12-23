@@ -1,6 +1,7 @@
 object WallService {
     private var posts = emptyArray<Post>()
     private var idCounter: Long = 1
+    private var comments = emptyArray<Comment>()
 
     fun add(post: Post): Post {
         post.id = idCounter
@@ -19,4 +20,17 @@ object WallService {
         }
         return false
     }
+
+    fun createComment(comment: Comment): Boolean {
+        for (post: Post in posts) {
+            if (post.id == comment.postId) {
+                comments += comment
+                return true
+            } else {
+                throw PostNotFoundException("Post ${comment.postId} does not found")
+            }
+        }
+        return false
+    }
+
 }

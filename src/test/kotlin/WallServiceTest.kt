@@ -319,4 +319,82 @@ class WallServiceTest {
         assertFalse(result)
 
     }
+
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrow() {
+        WallService.add(
+            Post(
+                999,
+                0,
+                0,
+                0,
+                0,
+                "text",
+                0,
+                0,
+                false,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "test",
+                "test",
+                "test",
+                0,
+                "test",
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                0,
+                arrayAttachment
+            )
+        )
+        val comment = Comment(2, 0, 0, 0, "test", "1", 0, 0, WikiPage(1, 1, "test"), "test", false)
+        WallService.createComment(comment)
+        shouldThrow()
+    }
+
+    @Test
+    fun comment_add_True() {
+        WallService.add(
+            Post(
+                333,
+                333,
+                0,
+                0,
+                0,
+                "text",
+                0,
+                0,
+                false,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "test",
+                "test",
+                "test",
+                0,
+                "test",
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                0,
+                arrayAttachment
+            )
+        )
+        val comment = Comment(1, 0, 0, 0, "test", "1", 0, 0, WikiPage(1, 1, "test"), "test", false)
+        val result = WallService.createComment(comment)
+        assertTrue(result)
+    }
 }
